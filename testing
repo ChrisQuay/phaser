@@ -1,0 +1,22 @@
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', {
+    preload: preload,
+    create: create,
+    update: update,
+    render: render
+});
+function preload() {
+    game.load.image('character', '/assets/character.png');
+    game.load.image('enemy', '/assets/enemy.png');
+}
+
+var background;
+var character;
+function create() {
+    // Character
+    character = game.add.sprite(game.width/2, game.height/2, 'character');
+    character.anchor.set(0.5, 0.5);
+
+    // Enemy
+    enemy = game.add.sprite((game.width/2) - 100, game.height/2, 'enemy');
+    enemy.anchor.set(0.5, 0.5);
+}
